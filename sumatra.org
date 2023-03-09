@@ -1,0 +1,42 @@
+* About
+Sumatra is a pdf viewer.
+* Configuration file
+** Through the gui
+Settings -> advanced options -> opens up config file.
+** Manual editing
+the configuration file is named: SumatraPDF-settings.txt
+
+The file is stored in %LOCALAPPDATA%\SumatraPDF directory for the installed
+version or in the same directory as SumatraPDF.exe executable for the portable
+version. 
+
+installed version: %LOCALAPPDATA%\SumatraPDF
+portable version: C:\Program Files\SumatraPDF
+
+* How to set keybindings
+#+begin_src txt
+  Shortcuts [
+    [
+       Cmd = CmdScrollUpHalfPage
+       Key = Ctrl + Shift + u
+    ]
+    [
+       Cmd = CmdScrollDownHalfPage
+       Key = Ctrl + Shift + d
+    ]
+  ]
+#+end_src
+* My custom configuration
+#+begin_src txt :tangle "./SumatraPDF-settings.txt"
+  Shortcuts [
+    [
+      Cmd = CmdScrollUpHalfPage
+      Key = Ctrl + u
+    ]
+    [
+      Cmd = CmdScrollDownHalfPage
+      Key = Ctrl + d
+    ]
+  ]
+#+end_src
+
