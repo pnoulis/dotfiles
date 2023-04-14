@@ -1,0 +1,89 @@
+* Clipboards
+** About
+A clipboard is a standard program found in all operating systems.
+It copies and pastes text.
+** Resources
+https://en.wikipedia.org/wiki/Clipboard_(computing)
+https://wiki.archlinux.org/title/clipboard
+** Clipboard vs Clipboard manangers
+A clipboard program is very simple. It saves stdin so that it may be pasted
+again somewhere else.
+
+Clipboard managers are programs which add enhancements to the standard clipboard
+behavior.
+
+Some standard enhancements are:
+
+- clipboard history
+- clipboard synchronization
+
+** Standard Usage
+Ctrl-C -> copy selection
+Ctrl-V -> paste last saved selection
+** Clip [Windows standard]
+** Xclip [Xorg standard]
+** wl-clipboard [Wayland standard]
+** Clipboard
+*** About
+Clipboard is a clipboard manager.
+*** Resources
+https://github.com/Slackadays/Clipboard
+*** Installation
+**** Linux
+#+begin_src sh :tangle "build/install_clipboard.sh" :mkdirp yes :shebang "#!/usr/bin/env bash"
+  command -v clipboard 2>/dev/null
+  if (( $? == 0)); then
+      echo 'Clipboard is already installed in your system.'
+      exit
+  fi
+
+  command -v curl >/dev/null
+  if (( $? > 0 )); then
+      echo 'Failed finding dependency program: curl'
+      echo 'Failed Clipboard installation'
+      exit 1
+  fi
+
+  command -v unzip >/dev/null
+  if (( $? > 0 )); then
+      echo 'Failed finding dependency program: unzip'
+      echo 'Failed Clipboard installation'
+      exit 1
+  fi
+  
+  clipboardVendor='https://github.com/Slackadays/Clipboard'
+  clipboardLink='https://github.com/Slackadays/Clipboard/raw/main/src/install.sh'
+
+  # silent = do not show progress meter or error messages
+  # fail = Fail silently
+  # location = if server indicates that the resource has been moved
+  # through a 3xx response code, follow the redirection
+  curl --silent --fail --location "${clipboardLink}" 2>&1 > clipboardInstaller.sh
+  if (( $? > 0 )); then
+      echo "Failed to download Clipboard from ${clipboardLink}"
+      echo 'Failed Clipboard installation'
+      rm clipboardInstaller.sh
+      exit 1
+  fi
+
+  chmod +x clipboardInstaller.sh
+  ./clipboardInstaller.sh
+  if (( $? > 0 )); then
+      echo "Failed Clipboard installation"
+      exit 1
+  fi
+
+  command -v clipboard >/dev/null
+
+  if (( $? > 0 )); then
+      echo 'Failed Clipboard installation'
+      exit 1
+  fi
+
+  echo 'Successful Clipboard installation'
+
+#+end_src
+
+**** Windows
+*** Usage
+*** Keybindings

@@ -1,0 +1,16 @@
+* About
+WSL, windows subsystem for linux, is a virtual linux operating system hosted
+within windows. It seamlessly allows developers to make use of all the tools
+available in a linux box, within windows.
+* Installing
+* Updating
+* Configuring 
+* Sharing the clipboard between wsl and windows
+** Standard windows clipboard
+clip.exe is the standard clipboard tool in windows.
+*** Usage
+** Standard Xorg clipboard
+*** Usage
+** Standard Wayland clipboard
+*** Usage
+** 3rd party clipboards
