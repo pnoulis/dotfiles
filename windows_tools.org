@@ -1,0 +1,10 @@
+* Scoop
+** About
+Scoop is a package manager that utilizes github as its online repository.
+** Resources
+[[https://scoop.sh/]]
+** Installation
+#+begin_src powershell
+ Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+ irm get.scoop.sh | iex
+#+end_src

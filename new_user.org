@@ -1,0 +1,53 @@
+# Directories
+#+begin_src shell
+  mkdir -p src/github.com/pnoulis
+  mkdir -p src/github.com/<some_user>
+  mkdir -p src/bitbucket.com/pnoulis
+  mkdir -p src/work/intelligent_entertainment/
+  mkdir -p src/work/bratnet/
+  mkdir -p src/freelance/<some_company/person>
+  mkdir -p src/[cwork]/
+  mkdir -p src/[cfreelance]/
+  mkdir -p src/[cpp]/
+  mkdir -p src/pp/{c,cpp,go,rust,javascript}
+  mkdir -p src/archive/
+
+  mkdir -p lib/x86_64
+  mkdir -p lib/x86
+  mkdir -p lib/sparc
+
+  mkdir -p bin/
+  mkdir -p include/
+
+  mkdir -p tools/github.com/
+  mkdir -p tools/ubuntu/
+  mkdir -p tools/arch/
+
+  mkdir -p projects/pavlos_noulis/main.org
+  mkdir -p projects/pavlos_noulis/governments/{gr,uk}
+  mkdir -p projects/pavlos_noulis/properties/{gr,uk}
+
+  # The Documents tree hierarchy flows based on people and spreads out into services
+  mkdir -p documents/pavlos_noulis/health/
+  mkdir -p documents/pavlos_noulis/gym/
+  mkdir -p documents/pavlos_noulis/amazon/
+  mkdir -p documents/pavlos_noulis/government/{gr,uk}
+  mkdir -p documents/pavlos_noulis/vehicles/<some_car>,<some_motorbike>...whatever
+  mkdir -p documents/pavlos_noulis/properties/<some_house>
+  mkdir -p documents/pavlos_noulis/...
+  mkdir -p documents/product_manuals/
+  mkdir -p documents/browser/
+
+  mkdir -p library/{non_fiction,manuals,articles,fiction}
+  mkdir -p multimedia/{music,videos,movies,documentaries,pictures}
+
+  mkdir -p downloads/browser/
+  mkdir -p downloads/facebook/
+  mkdir -p downloads/twitter/
+  mkdir -p downloads/youtube/
+  mkdir -p downloads/tribler/
+
+  AD2F1837.OMENCommandCenter_v10z8vjag6ke6/
+  AD2F1837.OMENCommandCenter_v10z8vjag6ke6/
+#+end_src
+
