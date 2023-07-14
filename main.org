@@ -1,0 +1,19 @@
+* Multiple hosts and multiple configurations
+The dotfiles repository holds the configurations for more than one host. Each
+host and its associated dotfiles are identifier through the host's hostname. The
+naming of hosts.
+* hostname syntax
+** For personal computers
+<first_3_letters_of_owner's firstname><first_3_letters_of_owner's
+lastname>-<device_role>-<sequential ID>
+
+** device roles
+wd=work desktop
+pd=personal desktop
+wl=work laptop
+pl=personal laptop
+wt=work tablet
+pt=personal tablet
+** for example
+pavnoul-pd
+pavnoul-pd-1

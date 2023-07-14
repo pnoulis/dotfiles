@@ -1,0 +1,12 @@
+* About
+Sway is a *window manager* utilizing the new wayland protocol. In wayland window
+managers are required to perform more functions than what was required of them
+under Xorg. As a result, the name *compositor* may sometimes be used to
+differentiate them from Xorg window managers, stressing their particular role
+under wayland.
+
+A window manager or (WM) for short is a program that controls the placement and
+appearance of windowns within a windowing system in a graphical user
+interface(GUI). It may be used as part of desktop environment (suite of
+programs) or standalone.
+

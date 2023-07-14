@@ -1,0 +1,23 @@
+* prompt
+The prompt is of the form:
+
+username@hostname followed by the current working directory.
+After the current working directory the actual prompt \$ is
+printed on a new line.
+#+begin_src bash :tangle 'build/bashrc" :mkdirp yes :shebang '#!/usr/bin/env bash'
+  PS1='[\u@\h \w]\n\$ '
+#+end_src
+
+* aliases
+#+begin_src bash :tangle 'build/bashrc" :mkdirp yes :shebang '#!/usr/bin/env bash'
+  alias ls='ls --color=auto'
+  alias lst='/usr/bin/ls --sort --time'
+  alias lls='/usr/bin/ls --long'
+  alias als='/usr/bin/ls --almost-all'
+  # --time newest files are listed first
+  # --reverse newest files are listed last
+  alias tls='ls -t --reverse -1'
+  grepi='grep -i'
+  egrepi='egrep -i'
+#+end_src
+
