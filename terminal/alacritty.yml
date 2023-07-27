@@ -109,6 +109,12 @@
   # Scrolling distance multiplier.
   #multiplier: 3
 
+# Padding
+window:
+  padding:
+    x: 15
+    y: 10
+
 # Font configuration
 font:
   # Normal (roman) font face
