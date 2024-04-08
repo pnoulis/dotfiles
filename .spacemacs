@@ -33,32 +33,42 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(react
-     go
      html
      (spacemacs-layouts :variables
-                        spacemacs-layouts-restrict-spc-tab t)
+                        spacemacs-layouts-restrict-spc-tab nil)
      (javascript :variables
                  javascript-fmt-tool 'prettier
                  js-indent-level 2
-                 js2-basic-offset 2)
-     systemd
+                 js2-basic-offset 2
+                 javascript-fmt-on-save t
+                 javascript-backend 'lsp
+                 )
+
+     (typescript :variables
+                 typescript-fmt-tool 'prettier
+                 typescript-fmt-on-save t
+                 typescript-backend 'lsp
+                 )
+     (json :variables
+           json-fmt-tool 'prettier
+           json-backend 'lsp
+           json-fmt-on-save t)
      yaml
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
-     ;; `M-m f e R' (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
-     auto-completion
+     (auto-completion :variables
+                      auto-completion-enable-help-tooltip 'manual
+                      auto-completion-enable-sort-by-usage t
+                      :disabled-for
+                      org
+                      git
+                      )
      better-defaults
      emacs-lisp
      git
      nginx
      helm
      markdown
-     epub
-     pdf
      lsp
-     ;; markdown
+     markdown
      ;; multiple-cursors
      (org :variables
           org-confirm-babel-evaluate nil)
@@ -573,11 +583,16 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+
   (setq dotspacemacs-display-default-layout t)
   (add-hook 'org-mode-hook 'auto-fill-mode)
+  (setq fill-column 70)
   (load "~/.emacs.d/elfmt/elfmt.el")
   (setq vterm-timer-delay 0.01)
   (setq browse-url-browser-function 'browse-url-firefox)
+  (setq compilation-ask-about-save nil)
+  (setq compilation-always-kill t)
+
 
   ;; LSP FEATURES
   (setq lsp-modeline-code-actions-enable nil)
@@ -588,5 +603,8 @@ before packages are loaded."
   (setq lsp-completion-show-detail nil)
   (setq lsp-enable-symbol-highlighting nil)
   (setq lsp-ui-doc-enable nil)
+  (add-to-list 'auto-mode-alist '("[Mm]akefile\\..*\\'" . makefile-gmake-mode))
+  (setq projectile-switch-project-action 'projectile-dired)
+
   )
 

@@ -8,3 +8,7 @@ Scoop is a package manager that utilizes github as its online repository.
  Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
  irm get.scoop.sh | iex
 #+end_src
+
+* New windows installation
+
+Install 
